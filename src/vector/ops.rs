@@ -21,9 +21,9 @@ where K: Sub<Output = K> + Copy {
 
 impl<K> Vector<K>
 where K: Mul<Output = K> + Copy {
-    pub fn scl(&mut self, k: &K) {
+    pub fn scl(&mut self, k: K) {
         for u_i in self.data.iter_mut() {
-            *u_i = *u_i * *k;
+            *u_i = *u_i * k;
         }
     }
 }
