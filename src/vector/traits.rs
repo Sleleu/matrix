@@ -9,7 +9,7 @@ where K: Copy {
 }
 
 impl<K> fmt::Display for Vector<K>
-where K: fmt::Display + std::fmt::Debug {
+where K: fmt::Display + std::fmt::Debug + Copy {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         for (i, value) in self.data.iter().enumerate() {
             if i < self.data.len() - 1 {
