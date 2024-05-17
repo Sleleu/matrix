@@ -29,3 +29,13 @@ where K:    Copy + Mul<Output = K> + Add<Output = K> + Default,
             square_sum.powf(0.5)
         }
 }
+
+//infinie
+impl<K> Vector<K>
+where K:    Neg<Output = K> + Copy + Default + PartialOrd + Into<f64> {
+    pub fn norm_inf(&self) -> f64 {
+        self.data.iter()
+                 .map(|&x| {abs_k(x).into()})
+                 .fold(0.0, f64::max)
+    }
+}
