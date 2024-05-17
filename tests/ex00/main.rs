@@ -79,3 +79,8 @@ pub fn matrix_tests() {
     // [2.0, 4.0]
     // [6.0, 8.0]
 }
+
+fn main() {
+    vector_tests();
+    matrix_tests();
+}
