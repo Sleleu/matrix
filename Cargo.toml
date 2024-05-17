@@ -6,3 +6,24 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+
+
+[lib]
+name = "matrix"
+path = "src/lib/mod.rs"
+
+[[bin]]
+name = "ex00"
+path = "tests/ex00/main.rs"
+
+[[bin]]
+name = "ex01"
+path = "tests/ex01/main.rs"
+
+[[bin]]
+name = "ex02"
+path = "tests/ex02/main.rs"
+
+[[bin]]
+name = "ex03"
+path = "tests/ex03/main.rs"
