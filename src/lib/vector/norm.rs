@@ -1,4 +1,4 @@
-use std::ops::{Add, Neg};
+use std::ops::{Add, Neg, Mul};
 use std::cmp::PartialOrd;
 use crate::vector::model::Vector;
 
@@ -10,10 +10,22 @@ where K: Neg<Output = K> + PartialOrd + Copy + Default {
 // manhattan
 impl<K> Vector<K>
 where K:    Neg<Output = K> + PartialOrd + Copy + Default,
-      f32:  Add<K, Output = f32> {
-    pub fn norm_1(&self) -> f32 {
-        self.data.iter().map(|&x| abs_k(x)).fold(0.0, |acc: f32, x: K| acc + x)
-    }
+      f64:  Add<K, Output = f64> {
+    pub fn norm_1(&self) -> f64 {
+        self.data.iter()
+            .map(|&x| {
+                abs_k(x)
+            })
+            .fold(0.0, |acc: f64, x: K| acc + x)
+        }
 }
 
 //euclidienne
+impl<K> Vector<K> 
+where K:    Copy + Mul<Output = K> + Add<Output = K> + Default,
+      f64:  From<K> {
+    pub fn norm(&self) -> f64 {
+            let square_sum: f64 = self.dot(self).into();
+            square_sum.powf(0.5)
+        }
+}
