@@ -14,24 +14,28 @@ path = "src/lib/mod.rs"
 
 [[bin]]
 name = "ex00"
-path = "tests/ex00/main.rs"
+path = "tests/ex00/ex00.rs"
 
 [[bin]]
 name = "ex01"
-path = "tests/ex01/main.rs"
+path = "tests/ex01/ex01.rs"
 
 [[bin]]
 name = "ex02"
-path = "tests/ex02/main.rs"
+path = "tests/ex02/ex02.rs"
 
 [[bin]]
 name = "ex03"
-path = "tests/ex03/main.rs"
+path = "tests/ex03/ex03.rs"
 
 [[bin]]
 name = "ex04"
-path = "tests/ex04/main.rs"
+path = "tests/ex04/ex04.rs"
 
 [[bin]]
 name = "ex05"
-path = "tests/ex05/main.rs"
+path = "tests/ex05/ex05.rs"
+
+[[bin]]
+name = "ex06"
+path = "tests/ex06/ex06.rs"
