@@ -39,3 +39,19 @@ path = "tests/ex05/ex05.rs"
 [[bin]]
 name = "ex06"
 path = "tests/ex06/ex06.rs"
+
+[[bin]]
+name = "ex07"
+path = "tests/ex07/ex07.rs"
+
+[[bin]]
+name = "ex08"
+path = "tests/ex08/ex08.rs"
+
+[[bin]]
+name = "ex09"
+path = "tests/ex09/ex09.rs"
+
+[[bin]]
+name = "ex10"
+path = "tests/ex10/ex10.rs"
