@@ -64,6 +64,14 @@ fn row_echelon_form_test() {
     ]);
     println!("{}", u.row_echelon());
 
+    //TEST POUR INVERSE
+    let u: Matrix<f32> = Matrix::from([
+        [2.,0.,0.,1.,0.,0.],
+        [0.,2.,0.,0.,1.,0.],
+        [0.,0.,2.,0.,0.,1.],
+    ]);
+    println!("{}", u.row_echelon());
+
 }
 
 fn main() {

@@ -6,5 +6,6 @@ pub mod trace;
 pub mod transpose;
 pub mod row_echelon;
 pub mod determinant;
+pub mod inverse;
 
 pub use model::Matrix;
