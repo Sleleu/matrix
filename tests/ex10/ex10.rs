@@ -63,6 +63,7 @@ fn row_echelon_form_test() {
         [0]
     ]);
     println!("{}", u.row_echelon());
+
 }
 
 fn main() {

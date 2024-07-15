@@ -2,6 +2,9 @@ use matrix::colors::*;
 use matrix::matrix::Matrix;
 
 fn determinant_test() {
+
+    println!("\n\n{GREEN} DETERMINANT TESTS {END}\n");
+
     let u = Matrix::from([
     [ 1., -1.],
     [-1., 1.],
@@ -30,6 +33,59 @@ fn determinant_test() {
     ]);
     println!("{}", u.determinant());
     // 1032
+
+    println!("\n\n{GREEN} OTHER TESTS {END}\n");
+
+    println!("example from : https://fr.wikipedia.org/wiki/Calcul_du_d%C3%A9terminant_d%27une_matrice");
+    let u: Matrix<f32> = Matrix::from([
+        [-2., 2., -3.],
+        [-1., 1., 3.],
+        [2., 0., -1.],
+        ]);
+    println!("{}", u.determinant());
+    // 18
+
+    println!("example from : http://maths.akkouche.free.fr/Maths/Fiches/Algebre_Fiche_2_Pivot_Gauss.pdf");
+    let u: Matrix<f32> = Matrix::from([
+        [9., 3., -9.],
+        [2., 1., 2.],
+        [2., -1., -2.],
+        ]);
+    println!("{}", u.determinant());
+    // 60
+
+    println!("Last line with only 0");
+    let u: Matrix<f32> = Matrix::from([
+        [9., 3., -9.],
+        [0., 1., 2.],
+        [0., 0., 0.],
+        ]);
+    println!("{}", u.determinant());
+    // 0
+
+    println!("Second column with only 0");
+    let u: Matrix<f32> = Matrix::from([
+        [1., 0., -9.],
+        [4., 0., 2.],
+        [3., 0., 5.],
+        ]);
+    println!("{}", u.determinant());
+    // 0
+
+    println!("Undefined output");
+    let u: Matrix<i32> = Matrix::from([
+        [42],
+    ]);
+    println!("{}", u.determinant());
+    // undefined
+
+    println!("Undefined output");
+    let u: Matrix<i32> = Matrix::from([
+        [1,2,4,13,0,0],
+    ]);
+    println!("{}", u.determinant());
+    // undefined
+
 }
 
 fn main() {

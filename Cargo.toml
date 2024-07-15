@@ -55,3 +55,7 @@ path = "tests/ex09/ex09.rs"
 [[bin]]
 name = "ex10"
 path = "tests/ex10/ex10.rs"
+
+[[bin]]
+name = "ex11"
+path = "tests/ex11/ex11.rs"
