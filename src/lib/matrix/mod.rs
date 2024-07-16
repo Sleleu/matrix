@@ -7,5 +7,6 @@ pub mod transpose;
 pub mod row_echelon;
 pub mod determinant;
 pub mod inverse;
+pub mod rank;
 
 pub use model::Matrix;

@@ -1,9 +1,9 @@
 use crate::matrix::model::Matrix;
-use std::ops::{Add, Div, Mul, Neg, Sub};
+use std::ops::{Add, Div, Mul, Sub, SubAssign, Neg};
 use std::convert::From;
 
 impl<K> Matrix<K>
-where K: From<i32> + std::ops::SubAssign + Add<Output = K> + Sub<Output = K> + Mul<Output = K> + Div<Output = K> + PartialEq + Copy + Default + Neg<Output = K> {
+where K: From<i32> + SubAssign + Add<Output = K> + Sub<Output = K> + Mul<Output = K> + Div<Output = K> + PartialEq + Copy + Default + Neg<Output = K> {
     
     fn get_identity(&self) -> Matrix<K> {
 
