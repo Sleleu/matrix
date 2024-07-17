@@ -18,8 +18,11 @@ where K: From<i32> + SubAssign + Add<Output = K> + Sub<Output = K> + Mul<Output 
     pub fn inverse(&mut self) -> Result<Matrix<K>, &str> {
 
         let mut pivot_index: usize = 0;
-        if self.determinant() == K::default() || self.col() != self.row() {
+        if self.determinant() == K::default() {
             return Err("The matrix is not invertible");
+        }
+        if self.col() != self.row() {
+            return Err("Not square matrix")
         }
         let mut identity: Matrix<K> = self.get_identity();
 

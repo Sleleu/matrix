@@ -39,6 +39,7 @@ fn row_echelon_form_test() {
 
     println!("\n\n{GREEN} OTHER TESTS {END}\n");
 
+    println!("{CYAN}Test to solve a system of linear equations{END}");
     let u: Matrix<f64> = Matrix::from([
         [1., 1., 2., 3.],
         [1., 2., 1., 1.],
@@ -49,22 +50,13 @@ fn row_echelon_form_test() {
     // [0.0][1.0][0.0]
     // [-0.0][-0.0][1.0]
 
-    let u: Matrix<f32> = Matrix::from([
-        [1., 1., 2., 3.],
-        [1., 2., 1., 1.],
-        [2., 1., 1., 0.],
-        ]);
-    println!("{}", u.row_echelon());
-    // [1.0][0.0][0.0]
-    // [0.0][1.0][0.0]
-    // [-0.0][-0.0][1.0]
-
+    println!("{CYAN}1x1 matrix with zero {END}");
     let u: Matrix<i32> = Matrix::from([
         [0]
     ]);
     println!("{}", u.row_echelon());
 
-    //TEST POUR INVERSE
+    println!("{CYAN}test with augmented matrix to find the inverse matrix{END}");
     let u: Matrix<f32> = Matrix::from([
         [2.,0.,0.,1.,0.,0.],
         [0.,2.,0.,0.,1.,0.],

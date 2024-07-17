@@ -42,6 +42,8 @@ fn inverse_test() {
     // [0.143678161, 0.074712644, -0.206896552]
 
     println!("\n\n{GREEN} OTHER TESTS {END}\n"); 
+
+    println!("{CYAN}random values{END}");
     let mut u = Matrix::from([
         [2., 50., 6., 71., 8.],
         [4., 2., 0., 42., 1.,],
@@ -59,6 +61,7 @@ fn inverse_test() {
     // [-0.017547297538034065][0.05326540064844847][0.06382940820180306][0.004881177183168862][-0.05999928741938949]
     // [-0.203513022410661][0.33858267716535545][0.7880072683222311][0.04239854633555437][-0.601453664445792]
 
+    println!("{CYAN}Singular matrix{END}");
     let mut u = Matrix::from([
         [1., 1., 1., 1., 1.],
         [1., 1., 1., 1., 1.],
@@ -72,6 +75,7 @@ fn inverse_test() {
         }
     // The matrix is not invertible
 
+    println!("{CYAN}One row consists of zeros = singular{END}");
     let mut u = Matrix::from([
         [8., 5., -2.],
         [0., 0., 0.],
@@ -83,6 +87,7 @@ fn inverse_test() {
         }
     // The matrix is not invertible
 
+    println!("{CYAN}3x2 matrix, result undefined{END}");
     let mut u = Matrix::from([
         [8., 5.],
         [1., 0.],
@@ -94,6 +99,7 @@ fn inverse_test() {
         }
     // undefined
 
+    println!("{CYAN}2x3 matrix, result undefined{END}");
     let mut u = Matrix::from([
         [8., 1., 2.],
         [1., 0., 4.],
@@ -104,15 +110,17 @@ fn inverse_test() {
         }
     // undefined
 
-        let mut u = Matrix::from([
-            [8.],
-            ]);
-            match u.inverse() {
-                Ok(inverse) => println!("{}", inverse),
-                Err(e) => eprintln!("{}\n",e),
-            }
-    // undefined
+    println!("{CYAN}1x1 matrix = just a scalar{END}");
+    let mut u = Matrix::from([
+        [8.],
+        ]);
+        match u.inverse() {
+            Ok(inverse) => println!("{}", inverse),
+            Err(e) => eprintln!("{}\n",e),
+        }
+    // 0.125
 
+    println!("{CYAN}wtf{END}");
     let mut u = Matrix::from([
         [0., 2., 1., 2., 1., 2., 0., 2., 1., 2., 1., 2., 0., 2., 1., 2., 1., 2., 0., 2., 1., 2., 1., 42.],
         [3., 0., 3., 4., 3., 4., 3., 0., 3., 4., 3., 4., 3., 0., 3., 4., 3., 4., 3., 0., 3., 4., 42., 4.],
@@ -143,7 +151,6 @@ fn inverse_test() {
             Ok(inverse) => println!("{}", inverse),
             Err(e) => eprintln!("{}\n",e),
         }
-
 
 }
 

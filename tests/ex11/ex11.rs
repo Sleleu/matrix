@@ -11,6 +11,7 @@ fn determinant_test() {
     ]);
     println!("{}", u.determinant());
     // 0.0
+
     let u = Matrix::from([
     [2., 0., 0.],
     [0., 2., 0.],
@@ -18,6 +19,7 @@ fn determinant_test() {
     ]);
     println!("{}", u.determinant());
     // 8.0
+
     let u = Matrix::from([
     [8., 5., -2.],
     [4., 7., 20.],
@@ -25,6 +27,7 @@ fn determinant_test() {
     ]);
     println!("{}", u.determinant());
     // -174.0
+    
     let u = Matrix::from([
     [ 8., 5., -2., 4.],
     [ 4., 2.5, 20., 4.],
@@ -36,7 +39,7 @@ fn determinant_test() {
 
     println!("\n\n{GREEN} OTHER TESTS {END}\n");
 
-    println!("example from : https://fr.wikipedia.org/wiki/Calcul_du_d%C3%A9terminant_d%27une_matrice");
+    println!("{CYAN}example from : https://fr.wikipedia.org/wiki/Calcul_du_d%C3%A9terminant_d%27une_matrice{END}");
     let u: Matrix<f32> = Matrix::from([
         [-2., 2., -3.],
         [-1., 1., 3.],
@@ -45,7 +48,7 @@ fn determinant_test() {
     println!("{}", u.determinant());
     // 18
 
-    println!("example from : http://maths.akkouche.free.fr/Maths/Fiches/Algebre_Fiche_2_Pivot_Gauss.pdf");
+    println!("{CYAN}example from : http://maths.akkouche.free.fr/Maths/Fiches/Algebre_Fiche_2_Pivot_Gauss.pdf{END}");
     let u: Matrix<f32> = Matrix::from([
         [9., 3., -9.],
         [2., 1., 2.],
@@ -54,7 +57,7 @@ fn determinant_test() {
     println!("{}", u.determinant());
     // 60
 
-    println!("Last line with only 0");
+    println!("{CYAN}Last line with only 0{END}");
     let u: Matrix<f32> = Matrix::from([
         [9., 3., -9.],
         [0., 1., 2.],
@@ -63,7 +66,7 @@ fn determinant_test() {
     println!("{}", u.determinant());
     // 0
 
-    println!("Second column with only 0");
+    println!("{CYAN}Second column with only 0{END}");
     let u: Matrix<f32> = Matrix::from([
         [1., 0., -9.],
         [4., 0., 2.],
@@ -72,14 +75,14 @@ fn determinant_test() {
     println!("{}", u.determinant());
     // 0
 
-    println!("Undefined output");
+    println!("{CYAN}Undefined output{END}");
     let u: Matrix<i32> = Matrix::from([
         [42],
     ]);
     println!("{}", u.determinant());
     // undefined
 
-    println!("Undefined output");
+    println!("{CYAN}Undefined output{END}");
     let u: Matrix<i32> = Matrix::from([
         [1,2,4,13,0,0],
     ]);
