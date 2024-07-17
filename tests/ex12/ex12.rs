@@ -43,6 +43,16 @@ fn inverse_test() {
 
     println!("\n\n{GREEN} OTHER TESTS {END}\n"); 
 
+    println!("{CYAN}Example from wikipedia: https://en.wikipedia.org/wiki/Invertible_matrix{END}");
+    let mut u = Matrix::from([
+        [-1., 1.5],
+        [1., -1.],
+        ]);
+        match u.inverse() {
+            Ok(inverse) => println!("{}", inverse),
+            Err(e) => eprintln!("{}\n",e),
+        }
+
     println!("{CYAN}random values{END}");
     let mut u = Matrix::from([
         [2., 50., 6., 71., 8.],

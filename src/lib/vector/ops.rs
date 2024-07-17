@@ -27,33 +27,3 @@ where K: Mul<Output = K> + Copy {
         }
     }
 }
-
-
-// for usage of '+', '-' and '*' 
-impl<K> Add for Vector<K>
-where K: Add<Output = K> + Copy {
-    type Output = Self;
-
-    fn add(self, v: Vector<K>) -> Self::Output {
-        Vector { data: self.data.iter().zip(v.data.iter()).map(|(&u_i, &v_i)| u_i + v_i).collect() }
-    }
-}
-
-impl<K> Sub for Vector<K>
-where K: Sub<Output = K> + Copy {
-    type Output = Self;
-
-    fn sub(self, v: Vector<K>) -> Self::Output {
-        Vector { data: self.data.iter().zip(v.data.iter()).map(|(&u_i, &v_i)| u_i - v_i).collect() }
-    }
-}
-
-
-impl<K> Mul<K> for Vector<K>
-where K: Mul<Output = K> + Copy {
-    type Output = Self;
-
-    fn mul(self, scalar: K) -> Self::Output {
-        Vector { data: self.data.iter().map(|&u_i| u_i * scalar).collect() }
-    }
-}

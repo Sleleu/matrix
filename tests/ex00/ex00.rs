@@ -13,10 +13,6 @@ pub fn vector_tests() {
     // [7.0]
     // [10.0]
 
-    println!("{YELLOW}Use of trait Add tests{END}");
-    let res = u + v;
-    println!("{CYAN}{}{END}", res);
-
     println!("{GREEN}============= SUB ============={END}");
 
     println!("{YELLOW}Example tests{END}");
@@ -35,10 +31,6 @@ pub fn vector_tests() {
     println!("{CYAN}{}{END}", u);
     // [4.0]
     // [6.0]
-
-    println!("{YELLOW}Use of trait Mul tests{END}");
-    let res = u * 2.;
-    println!("{CYAN}{}{END}", res);
 
 }
 
