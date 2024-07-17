@@ -26,6 +26,53 @@ fn trace_test() {
     println!("{}", u.trace());
     // -21.0
 
+    println!("\n{GREEN} OTHER TESTS {END}\n");
+
+    println!("{CYAN}Simple 3x3 int matrix with only 10 on diagonal{END}");
+    let u: Matrix<i32> = Matrix::from([
+        [10, 0, 0],
+        [0, 10, 0],
+        [0, 0, 10],
+        ]);
+    println!("{}", u.trace());
+    // 30
+
+    println!("{CYAN}2x3 matrix: undefined result{END}");
+    let u: Matrix<i32> = Matrix::from([
+        [1, 0, 0],
+        [0, 1, 0],
+        ]);
+    println!("{}", u.trace());
+    // undefined
+
+    println!("{CYAN}5x1 matrix: undefined result{END}");
+    let u: Matrix<i32> = Matrix::from([
+        [1],
+        [1],
+        [1],
+        [1],
+        [1],
+        ]);
+    println!("{}", u.trace());
+    // undefined
+
+    println!("{CYAN}1x1 matrix{END}");
+    let u: Matrix<i32> = Matrix::from([
+        [42],
+        ]);
+    println!("{}", u.trace());
+    // 42
+
+    println!("{CYAN}Zero matrix{END}");
+    let u: Matrix<i32> = Matrix::from([
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        ]);
+    println!("{}", u.trace());
+    // 0
+
 }
 
 fn main() {
