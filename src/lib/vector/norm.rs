@@ -12,10 +12,7 @@ impl<K> Vector<K>
 where K:    Neg<Output = K> + PartialOrd + Copy + Default,
       f64:  Add<K, Output = f64> {
     pub fn norm_1(&self) -> f64 {
-        self.data.iter()
-            .map(|&x| {
-                abs_k(x)
-            })
+        self.data.iter().map(|&x| {abs_k(x)})
             .fold(0.0, |acc: f64, x: K| acc + x)
         }
 }
@@ -34,8 +31,7 @@ where K:    Copy + Mul<Output = K> + Add<Output = K> + Default,
 impl<K> Vector<K>
 where K:    Neg<Output = K> + Copy + Default + PartialOrd + Into<f64> {
     pub fn norm_inf(&self) -> f64 {
-        self.data.iter()
-                 .map(|&x| {abs_k(x).into()})
+        self.data.iter().map(|&x| {abs_k(x).into()})
                  .fold(0.0, f64::max)
     }
 }
