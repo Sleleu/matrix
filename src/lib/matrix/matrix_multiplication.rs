@@ -6,10 +6,7 @@ impl<K> Matrix<K>
 where K: Add<Output = K> + Mul<Output = K> + Copy + Default {
     pub fn mul_vec(&self, vec: &Vector<K>) -> Vector<K> {
         Vector {
-            data: self.data.iter()
-            .map(|row: &Vec<K>| {
-                row.iter()
-                .zip(&vec.data)
+            data: self.data.iter().map(|row: &Vec<K>| {row.iter().zip(&vec.data)
                 .fold(K::default(), |acc, (&a_i, &u_i)| acc + a_i * u_i)
             }).collect(),
         }
@@ -19,17 +16,27 @@ where K: Add<Output = K> + Mul<Output = K> + Copy + Default {
 impl<K> Matrix<K>
 where K: Add<Output = K> + Mul<Output = K> + Copy + Default {
     pub fn mul_mat(&self, mat: &Matrix<K>) -> Matrix<K> {
-        let col_len: usize = mat.data[0].len();
-        Matrix {
-            data: self.data.iter()
-            .map(|row_a: &Vec<K>| {
-                (0 .. col_len)
-                .map(|col_b: usize| {
-                    row_a.iter()
-                    .zip(mat.data.iter().map(|row_b| &row_b[col_b]))
-                    .fold(K::default(), |acc, (&a, &b)| acc + a * b)
-                }).collect()
-            }).collect()
+        let m = self.row();
+        let n = mat.col();
+        let p = self.col();
+
+        let mut result =  Matrix { data: vec![vec![K::default(); n]; m] };
+
+        if self.col() != mat.row() {
+            println!("undefined");
+            return result;
         }
+
+        for i in 0..m {
+            for j in 0..n {
+                let mut sum = K::default();
+                for k in 0..p {
+                    sum = sum + self.data[i][k] * mat.data[k][j];
+                }
+                result.data[i][j] = sum;
+            }
+        }
+
+        result
     }
 }
