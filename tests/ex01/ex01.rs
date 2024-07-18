@@ -25,6 +25,9 @@ fn linear_combination_test() {
     let u1 = Vector::from([1, 2, 3]);
     let u2 = Vector::from([4, 5, 6]);
     println!("{}", Vector::linear_combination(&[u1, u2], &[10, 5]));
+    // [30]
+    // [45]
+    // [60]
 
     println!("{CYAN} Not the same size between Vec array and vec of scalars : Result undefined{END}");
     let u1 = Vector::from([1, 2]);
@@ -32,6 +35,7 @@ fn linear_combination_test() {
     let u3 = Vector::from([1, 2]);
     let u4 = Vector::from([1, 2]);
     println!("{}", Vector::linear_combination(&[u1, u2, u3, u4], &[2, 4]));
+    // undefined
 
     println!("{CYAN} Not the same size between Vec in the array : Result undefined{END}");
     let u1 = Vector::from([1]);
@@ -39,6 +43,7 @@ fn linear_combination_test() {
     let u3 = Vector::from([1, 2, 3]);
     let u4 = Vector::from([1, 2, 3, 4]);
     println!("{}", Vector::linear_combination(&[u1, u2, u3, u4], &[2, 4, 6, 8]));
+    // undefined
 
 }
 

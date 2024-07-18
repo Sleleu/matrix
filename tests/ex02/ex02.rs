@@ -23,7 +23,7 @@ fn linear_interpolation_test() {
     // [[11., 5.5]
     // [16.5, 22.]]
 
-    println!("{YELLOW}Other tests{END}");
+    println!("\n\n{GREEN} OTHER TESTS {END}\n");
 
     let u: Vector<f32> = Vector::from([10., 10.]);
     let v: Vector<f32> = Vector::from([-10., 20.]);
@@ -75,6 +75,14 @@ fn linear_interpolation_test() {
     // [4.0][5.5][2.0]
     // [1.0][4.5][2.0]
     // [2.0][8.0][7.0]
+
+    let u: Vector<f32> = Vector::from([1., 2.]);
+    let v: Vector<f32> = Vector::from([-1., 1.]);
+    let res: Vector<f32> = lerp(u, v, 0.5);
+    println!("{CYAN}test{END}");
+    println!("{}", res);
+    // [0.0]
+    // [15.0]
 
 }
 
